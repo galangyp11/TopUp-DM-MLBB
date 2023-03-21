@@ -1,0 +1,100 @@
+.card-content {
+    width: 360px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+}
+
+.card-content#IdServer {
+    height: 309px;
+}
+
+.card-content#Diamonds {
+    height: 351px;
+}
+
+.card-content#Pembayaran {
+    height: 240px;
+}
+
+.card-content#Email {
+    height: 126px;
+}
+
+p, label {
+    font-family: 'Sunflower';
+    color: black;
+}
+
+.input {
+    height: 28px;
+    border-radius: 10px;
+}
+
+/* input[type=number] {
+    -moz-appearance: textfield;
+} */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input#idUser{
+    width: 145px;
+}
+
+.input#serverUser {
+    width: 94px;
+}
+
+#info {
+    font-size: 14px;
+    line-height: 18px;
+}
+
+input[type="radio"]{
+    appearance: none;
+    -webkit-appearance: none;
+    -mozilla-appearance: none;
+    vertical-align: text-bottom;
+}
+
+.card-diamond {
+    width: 143px;
+    height: 62px;
+    border-radius: 10px;
+    background-color: #9DC08B;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+input[type="radio"]:checked + label{
+    border: 3px solid #40513B;  
+}
+
+.card-diamond:hover {
+    border: 3px solid #40513B;   
+}
+
+.card-pembayaran {
+    width: 312px;
+    height: 51px;
+    border-radius: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+}
+
+.card-pembayaran:hover {
+    border: 3px solid #40513B;   
+}
+
+.card-content#Notelp {
+    height: 126px;
+}
+
+.input#Nomortelp {
+    width: 312px;
+}
