@@ -13,18 +13,6 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
                     <h1>Konfirmasi</h1>
                     <div className="row border">
                         <div className="col mb-n3">
-                            <p>Server </p>
-                        </div>
-                        <div className="col mb-n3 mr-n5">
-                            <p className="">:</p>
-                        </div>
-                        <div className="col mb-n3 ml-n5">
-                            <p className="fw-light">{dataUser.serverUser}</p>
-                        </div>
-                    </div>
-
-                    <div className="row border">
-                        <div className="col mb-n3">
                             <p>Id </p>
                         </div>
                         <div className="col mb-n3 mr-n5">
@@ -32,6 +20,18 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
                         </div>
                         <div className="col mb-n3 ml-n5">
                             <p className="fw-light">{dataUser.idUser}</p>
+                        </div>
+                    </div>
+                    
+                    <div className="row border">
+                        <div className="col mb-n3">
+                            <p>Server </p>
+                        </div>
+                        <div className="col mb-n3 mr-n5">
+                            <p className="">:</p>
+                        </div>
+                        <div className="col mb-n3 ml-n5">
+                            <p className="fw-light">{dataUser.serverUser}</p>
                         </div>
                     </div>
 

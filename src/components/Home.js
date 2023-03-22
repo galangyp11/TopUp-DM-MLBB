@@ -15,20 +15,66 @@ const Home = () => {
     const [dataUser, setDataUser] = useState({
         idUser: 'jokowi',
         serverUser: 'Null',
-        nickname:'Null',
+        nickname: 'Null',
         jumlahDiamond: 'Null',
-        harga:'Rp. 300.000',
+        harga: ' ',
         pembayaran: 'Null',
         noTelp: 'Null'
     });
 
     useEffect(() => {
 
-    })
+        if(dataUser.jumlahDiamond === '5') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 6.000'
+            }));
+        } else if(dataUser.jumlahDiamond === '11') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 12.000'
+            }));
+        } else if(dataUser.jumlahDiamond === '27') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 20.000'
+            }));
+        } else if(dataUser.jumlahDiamond === '50') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 35.000'
+            }));
+        } else if(dataUser.jumlahDiamond === '100') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 67.000'
+            }));
+        } else if(dataUser.jumlahDiamond === '137') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 83.000'
+            }));
+        } else if(dataUser.jumlahDiamond === '250') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 119.000'
+            }));
+        } else if(dataUser.jumlahDiamond === '1000') {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: 'Rp. 265.000'
+            }));
+        } else {
+            setDataUser((dataHarga) => ({
+                ...dataHarga,
+                harga: ' '
+            }));
+        }
+    }, [dataUser.jumlahDiamond])
 
     const handleBayar = () => {
         setIsShow(true)
-        // if(dataUser.idUser != 'jokowi') {
+        // if(dataUser.idUser !=== 'jokowi') {
 
         // }
     }

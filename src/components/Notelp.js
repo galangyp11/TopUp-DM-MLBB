@@ -17,7 +17,7 @@ const Notelp = ({dataUser, setDataUser}) => {
             </div>
 
             <div className="row ">
-                <input type="number" className='input my-n2' id='noTelp' placeholder='08xx-xxxx-xxxx' required value={dataUser.noTelp} onChange={handleChange}/>
+                <input type="number" className='input my-n2' id='noTelp' placeholder='08xxxxxxxxxx' required value={dataUser.noTelp} onChange={handleChange}/>
             </div>
 
             <div className="row">
