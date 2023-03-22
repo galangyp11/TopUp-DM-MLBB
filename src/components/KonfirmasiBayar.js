@@ -11,7 +11,7 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
             >
                 <div className="modal-body">
                     <h1>Konfirmasi</h1>
-                    <div className="row border">
+                    <div className="row">
                         <div className="col mb-n3">
                             <p>Id </p>
                         </div>
@@ -22,8 +22,8 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
                             <p className="fw-light">{dataUser.idUser}</p>
                         </div>
                     </div>
-                    
-                    <div className="row border">
+
+                    <div className="row">
                         <div className="col mb-n3">
                             <p>Server </p>
                         </div>
@@ -35,7 +35,7 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
                         </div>
                     </div>
 
-                    <div className="row border">
+                    <div className="row">
                         <div className="col mb-n3">
                             <p>Nickname </p>
                         </div>
@@ -47,7 +47,7 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
                         </div>
                     </div>
 
-                    <div className="row border">
+                    <div className="row">
                         <div className="col mb-n3">
                             <p>Jumlah Diamond </p>
                         </div>
@@ -59,7 +59,7 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
                         </div>
                     </div>
                     
-                    <div className="row border">
+                    <div className="row">
                         <div className="col mb-n3">
                             <p>Harga </p>
                         </div>

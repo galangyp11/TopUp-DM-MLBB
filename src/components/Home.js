@@ -13,7 +13,7 @@ const Home = () => {
     
     const [isShow, setIsShow] = useState(false)
     const [dataUser, setDataUser] = useState({
-        idUser: 'jokowi',
+        idUser: 'Null',
         serverUser: 'Null',
         nickname: 'Null',
         jumlahDiamond: 'Null',
@@ -72,6 +72,30 @@ const Home = () => {
         }
     }, [dataUser.jumlahDiamond])
 
+    useEffect(() => {
+        // let id = dataUser.idUser
+        // const url = `https://pokeapi.co/api/v2/berry/${id}/`;
+
+        let idServer = dataUser.idUser + dataUser.serverUser
+        const url = `https://v1.apigames.id/merchant/M230314DWWH5029OR/cek-username/mobilelegend?user_id=${idServer}&signature=000a7da84dfbdfc958f3392a6af11ea8`
+  
+        const fetchData = async () => {
+            try{
+                const response = await fetch(url);
+                const json = await response.json();
+                console.log(json.data.username)
+                setDataUser((dataNick) => ({
+                    ...dataNick,
+                    nickname: JSON.stringify(json.data.username)
+                }))
+            } catch(error) {
+                console.log('error bang')
+            }
+        }
+
+        fetchData()
+    }, [])
+
     const handleBayar = () => {
         setIsShow(true)
         // if(dataUser.idUser !=== 'jokowi') {
@@ -86,7 +110,7 @@ const Home = () => {
         <div className="" style={{ backgroundColor:'#EDF1D6' }}>
             {console.log(dataUser)}
 
-            <div className="border border-danger container">   
+            <div className="container">   
                 <div className="row pt-5 pb-2">
                     <div className="d-flex justify-content-center">
                         <IdServer dataUser={dataUser} setDataUser={setDataUser} />
