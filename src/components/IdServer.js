@@ -1,7 +1,6 @@
 import './CardContent.css';
 import ml from './img/ml.png';
 import i from './img/i.png';
-import { useState } from 'react';
 
 const IdServer = ({dataUser, setDataUser}) => {
 

@@ -21,8 +21,11 @@ const Pembayaran = ({dataUser, setDataUser}) => {
                     onChange={handleChange}
                     checked={dataUser.pembayaran === 'Telkomsel'}
                 />
-                <div className="col ">
-                    <label className="pl-3 text-start card-pembayaran d-flex align-items-center justify-content-start" htmlFor="telkomsel" >TELKOMSEL</label>
+                <div className="col">
+                    <label className="pl-3 text-start card-pembayaran d-flex align-items-center justify-content-start position-relative" htmlFor="telkomsel" >TELKOMSEL
+                        <p className='mx-n5 position-absolute top-50 start-100 translate-middle' style={ {width:'120px'}}>{dataUser.harga}</p>
+                    </label>
+                    
                 </div>
             </div>
 
@@ -36,7 +39,9 @@ const Pembayaran = ({dataUser, setDataUser}) => {
                     checked={dataUser.pembayaran === 'BCA'}
                 />
                 <div className="col ">
-                    <label className="pl-3 text-start card-pembayaran d-flex align-items-center justify-content-start" htmlFor="bca">BCA</label>
+                    <label className="pl-3 text-start card-pembayaran d-flex align-items-center justify-content-start position-relative" htmlFor="bca">BCA
+                        <p className='mx-n5 position-absolute top-50 start-100 translate-middle' style={ {width:'120px'}}>{dataUser.harga}</p>
+                    </label>
                 </div>
             </div>
             
@@ -50,7 +55,9 @@ const Pembayaran = ({dataUser, setDataUser}) => {
                     checked={dataUser.pembayaran === 'DANA'}
                 />
                 <div className="col ">
-                    <label className="pl-3 text-start card-pembayaran d-flex align-items-center justify-content-start" htmlFor="dana">DANA</label>
+                    <label className="pl-3 text-start card-pembayaran d-flex align-items-center justify-content-start position-relative" htmlFor="dana">DANA
+                        <p className='mx-n5 position-absolute top-50 start-100 translate-middle' style={ {width:'120px'}}>{dataUser.harga}</p>
+                    </label>
                 </div>
             </div>
         </div>

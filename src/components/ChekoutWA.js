@@ -1,6 +1,6 @@
 const CheckoutWA = () => {
     return ( 
-        <div className="borde"></div>
+        <div className="border"></div>
      );
 }
  

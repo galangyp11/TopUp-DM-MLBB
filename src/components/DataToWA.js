@@ -28,7 +28,7 @@ const DataToWA = ({dataUser}) => {
 
     return ( 
       <div className="wa">
-        {console.log('tes doang')}
+        {console.log(dataUser)}
       </div>
      );
 }

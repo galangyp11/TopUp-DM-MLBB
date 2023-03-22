@@ -1,0 +1,48 @@
+.tombol-bayar {
+    width: 230px;
+    height: 42px;
+    background-color: #609966;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    font-family: 'Sunflower';
+    font-style: normal;
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.tombol-bayar2 {
+    width: 180px;
+    height: 42px;
+    background-color: #609966;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    font-family: 'Sunflower';
+    font-style: normal;
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.tombol-batal {
+    width: 130px;
+    height: 42px;
+    background-color: #ff5454;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    font-family: 'Sunflower';
+    font-style: normal;
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+button:hover {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px, rgb(51, 51, 51) 0px 0px 0px 3px;
+}

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import './CardContent.css';
 
 const Diamonds = ({dataUser, setDataUser}) => {
@@ -14,7 +13,6 @@ const Diamonds = ({dataUser, setDataUser}) => {
 
     return ( 
         <div className="card-content pr-4 pl-4 pb-4 pt-3" id='Diamonds'>
-            { console.log(dataUser.jumlahDiamond)}
             <div className="row">
                 <div className="col mt-n3">
                     <input 

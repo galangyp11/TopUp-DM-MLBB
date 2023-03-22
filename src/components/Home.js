@@ -1,27 +1,41 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 import IdServer from "./IdServer";
 import Diamonds from "./Diamonds";
 import Pembayaran from "./Pembayaran";
 import Notelp from "./Notelp";
 import CheckoutWA from "./ChekoutWA";
+import KonfirmasiBayar from "./KonfirmasiBayar";
 
-import './Footer.css';
+import './ButtonBayar.css';
 
 const Home = () => {
     
+    const [isShow, setIsShow] = useState(false)
     const [dataUser, setDataUser] = useState({
         idUser: 'jokowi',
-        serverUser: '',
-        jumlahDiamond: '',
-        pembayaran: '',
-        noTelp: ''
+        serverUser: 'Null',
+        nickname:'Null',
+        jumlahDiamond: 'Null',
+        harga:'Rp. 300.000',
+        pembayaran: 'Null',
+        noTelp: 'Null'
     });
 
+    useEffect(() => {
+
+    })
+
     const handleBayar = () => {
-        <CheckoutWA dataUser={dataUser}/>
+        setIsShow(true)
+        // if(dataUser.idUser != 'jokowi') {
+
+        // }
     }
 
+    const handleBatal = () => {
+        setIsShow(false)
+    }
     return ( 
         <div className="" style={{ backgroundColor:'#EDF1D6' }}>
             {console.log(dataUser)}
@@ -57,18 +71,16 @@ const Home = () => {
                     </div>
                 </div>
 
+                <div className="">
+                    <KonfirmasiBayar show={isShow} handleBatal={handleBatal} dataUser={dataUser}/>
+                </div>
+
                 <div className="row fixed-bottom">
                     <div className="vw-100 d-flex align-items-center justify-content-center" style={{ height:'60px', backgroundColor:'#40513B' }}>
-                        {/* <div className='tombol-bayar d-flex align-items-center justify-content-center'>
-                            <p className='text-bayar m-3'>Bayar</p>
-                            
-                        </div> */}
-                        <button 
-                            className="tombol-bayar d-flex align-items-center justify-content-center"
-                            onClick={handleBayar}    
-                        >Bayar</button>
+                        <button className="tombol-bayar d-flex align-items-center justify-content-center" onClick={handleBayar} >Bayar</button>
                     </div>
                 </div>
+
             </div>
         </div>
      );
