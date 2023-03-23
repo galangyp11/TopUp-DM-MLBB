@@ -1,0 +1,11 @@
+.alert{
+    width: 300px;
+    height: 20px;
+    background-color: #ff5454;
+}
+
+.text-alert {
+    color: white;
+
+    font-size: smaller;
+}

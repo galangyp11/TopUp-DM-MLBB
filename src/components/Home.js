@@ -6,12 +6,15 @@ import Pembayaran from "./Pembayaran";
 import Notelp from "./Notelp";
 import CheckoutWA from "./ChekoutWA";
 import KonfirmasiBayar from "./KonfirmasiBayar";
+import AlertGagal from "./AlertGagal";
 
 import './ButtonBayar.css';
 
 const Home = () => {
     
     const [isShow, setIsShow] = useState(false)
+    const [isiAlert, setIsiAlert] = useState('babi lu')
+    const [isAlert, setIsAlert] = useState(false)
     const [dataUser, setDataUser] = useState({
         idUser: 'Null',
         serverUser: 'Null',
@@ -82,11 +85,11 @@ const Home = () => {
         const fetchData = async () => {
             try{
                 const response = await fetch(url);
-                const json = await response.json();
-                console.log(json.data.username)
+                const datas = await response.json();
+                console.log(datas.data.username)
                 setDataUser((dataNick) => ({
                     ...dataNick,
-                    nickname: JSON.stringify(json.data.username)
+                    nickname: JSON.stringify(datas.data.username)
                 }))
             } catch(error) {
                 console.log('error bang')
@@ -94,14 +97,34 @@ const Home = () => {
         }
 
         fetchData()
-    }, [])
+
+        const timerAlert = setTimeout(() => { isAlert(true) }, 3000);
+        return () => clearTimeout(timerAlert);
+    
+    }, []);
 
     const handleBayar = () => {
-        setIsShow(true)
-        // if(dataUser.idUser !=== 'jokowi') {
 
-        // }
-    }
+        if(dataUser.idUser === 'Null') {
+            setIsAlert(true)
+            setIsiAlert('ID tidak ditemukan !')
+        } else if(dataUser.serverUser === 'Null') {
+            setIsAlert(true)
+            setIsiAlert('Server tidak ditemukan !')
+        } else if(dataUser.jumlahDiamond === 'Null') {
+            setIsAlert(true)
+            setIsiAlert('Silahkan pilih jumlah Diamond')
+        } else if(dataUser.pembayaran === 'Null') {
+            setIsAlert(true)
+            setIsiAlert('Silahkan pilih metode pembayaran !')
+        } else if(dataUser.noTelp === 'Null') {
+            setIsAlert(true)
+            setIsiAlert('Silahkan isi nomor telepon !')
+        } else {
+            setIsShow(true)
+        }
+      
+     }
 
     const handleBatal = () => {
         setIsShow(false)
@@ -143,6 +166,10 @@ const Home = () => {
 
                 <div className="">
                     <KonfirmasiBayar show={isShow} handleBatal={handleBatal} dataUser={dataUser}/>
+                </div>
+
+                <div className="fixed-bottom d-flex justify-content-center mb-5" >
+                    {isAlert ? <AlertGagal isiAlert={isiAlert}/> : <></> }
                 </div>
 
                 <div className="row fixed-bottom">
