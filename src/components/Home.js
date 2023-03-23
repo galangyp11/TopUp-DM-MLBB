@@ -1,4 +1,4 @@
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 
 import IdServer from "./IdServer";
 import Diamonds from "./Diamonds";
@@ -13,7 +13,7 @@ import './ButtonBayar.css';
 const Home = () => {
     
     const [isShow, setIsShow] = useState(false)
-    const [isiAlert, setIsiAlert] = useState('babi lu')
+    const [isiAlert, setIsiAlert] = useState('')
     const [isAlert, setIsAlert] = useState(false)
     const [dataUser, setDataUser] = useState({
         idUser: 'Null',
@@ -75,35 +75,8 @@ const Home = () => {
         }
     }, [dataUser.jumlahDiamond])
 
-    useEffect(() => {
-        // let id = dataUser.idUser
-        // const url = `https://pokeapi.co/api/v2/berry/${id}/`;
-
-        let idServer = dataUser.idUser + dataUser.serverUser
-        const url = `https://v1.apigames.id/merchant/M230314DWWH5029OR/cek-username/mobilelegend?user_id=${idServer}&signature=000a7da84dfbdfc958f3392a6af11ea8`
-  
-        const fetchData = async () => {
-            try{
-                const response = await fetch(url);
-                const datas = await response.json();
-                console.log(datas.data.username)
-                setDataUser((dataNick) => ({
-                    ...dataNick,
-                    nickname: JSON.stringify(datas.data.username)
-                }))
-            } catch(error) {
-                console.log('error bang')
-            }
-        }
-
-        fetchData()
-
-        const timerAlert = setTimeout(() => { isAlert(true) }, 3000);
-        return () => clearTimeout(timerAlert);
-    
-    }, []);
-
     const handleBayar = () => {
+        console.log(dataUser);
 
         if(dataUser.idUser === 'Null') {
             setIsAlert(true)
@@ -126,12 +99,39 @@ const Home = () => {
       
      }
 
+     useEffect(() => {
+        // let id = dataUser.idUser
+        // const url = `https://pokeapi.co/api/v2/berry/${id}/`;
+
+        let idServer = dataUser.idUser + dataUser.serverUser
+        const url = `https://v1.apigames.id/merchant/M230314DWWH5029OR/cek-username/mobilelegend?user_id=${idServer}&signature=000a7da84dfbdfc958f3392a6af11ea8`
+  
+        const fetchData = async () => {
+            try{
+                const response = await fetch(url);
+                const datas = await response.json();
+                console.log(datas.data.username)
+                setDataUser((dataNick) => ({
+                    ...dataNick,
+                    nickname: JSON.stringify(datas.data.username)
+                }))
+            } catch(error) {
+                console.log('error bang')
+            }
+        }
+
+        fetchData()
+
+        // const timerAlert = setTimeout(() => { isAlert(true) }, 3000);
+        // return () => clearTimeout(timerAlert);
+    
+    }, [isShow]);
+
     const handleBatal = () => {
         setIsShow(false)
     }
     return ( 
         <div className="" style={{ backgroundColor:'#EDF1D6' }}>
-            {console.log(dataUser)}
 
             <div className="container">   
                 <div className="row pt-5 pb-2">
