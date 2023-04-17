@@ -10,19 +10,26 @@ const DataToWA = ({dataUser}) => {
 
     client.on('ready', () => {
         console.log('Client is ready!');
+        const noTelpAsli = `${dataUser.noTelp}`;
 
-        const number = '+6281211139102';
+        const noTelp =  noTelpAsli.substring(1);
 
-        const text = 'galang ganteng';
+        const number = `+62${noTelp}`;
+
+        const text = `=== PESANAN DIAMOND ===
+        - Id : ${dataUser.idUser}
+        - Server : ${dataUser.serverUser}
+        - Nickname : ${dataUser.nickname}
+        - Jumlah Diamond : ${dataUser.jumlahDiamond}
+        - Harga : ${dataUser.harga}
+        - Pembayaran : ${dataUser.pembayaran}
+        =========================
+        PASTIKAN PEMBAYARAN SUDAH DITERIMA BARU KEMUDIAN DIAMOND DI PROSES`;
 
         const chatId = number.substring(1) + '@c.us';
 
         client.sendMessage(chatId, text);
     });
-
-    // client.on('message', () => {
-    //     message.client('sob');
-    // });
 
     client.initialize();
 

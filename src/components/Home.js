@@ -4,27 +4,18 @@ import IdServer from "./IdServer";
 import Diamonds from "./Diamonds";
 import Pembayaran from "./Pembayaran";
 import Notelp from "./Notelp";
-import CheckoutWA from "./ChekoutWA";
+import CheckoutWA from "./BuktiKeWA";
 import KonfirmasiBayar from "./KonfirmasiBayar";
 import AlertGagal from "./AlertGagal";
+import HalamanBayar from "./HalamanBayar";
 
 import './ButtonBayar.css';
 
-const Home = () => {
+const Home = ({isKonfirmasi, setIsKonfirmasi, isShow, setIsShow, dataUser, setDataUser}) => {
     
-    const [isShow, setIsShow] = useState(false)
-    const [isiAlert, setIsiAlert] = useState('')
-    const [isAlert, setIsAlert] = useState(false)
-    const [dataUser, setDataUser] = useState({
-        idUser: 'Null',
-        serverUser: 'Null',
-        nickname: 'Null',
-        jumlahDiamond: 'Null',
-        harga: ' ',
-        pembayaran: 'Null',
-        noTelp: 'Null'
-    });
-
+    const [isiAlert, setIsiAlert] = useState('');
+    const [isAlert, setIsAlert] = useState(false);
+   
     useEffect(() => {
 
         if(dataUser.jumlahDiamond === '5') {
@@ -94,44 +85,32 @@ const Home = () => {
             setIsAlert(true)
             setIsiAlert('Silahkan isi nomor telepon !')
         } else {
+            setIsAlert(false)
             setIsShow(true)
         }
       
      }
 
-     useEffect(() => {
-        // let id = dataUser.idUser
-        // const url = `https://pokeapi.co/api/v2/berry/${id}/`;
-
-        let idServer = dataUser.idUser + dataUser.serverUser
-        const url = `https://v1.apigames.id/merchant/M230314DWWH5029OR/cek-username/mobilelegend?user_id=${idServer}&signature=000a7da84dfbdfc958f3392a6af11ea8`
-  
-        const fetchData = async () => {
-            try{
-                const response = await fetch(url);
-                const datas = await response.json();
-                console.log(datas.data.username)
-                setDataUser((dataNick) => ({
-                    ...dataNick,
-                    nickname: JSON.stringify(datas.data.username)
-                }))
-            } catch(error) {
-                console.log('error bang')
-            }
-        }
-
-        fetchData()
-
-        // const timerAlert = setTimeout(() => { isAlert(true) }, 3000);
-        // return () => clearTimeout(timerAlert);
-    
-    }, [isShow]);
-
-    const handleBatal = () => {
+    const handleKonfirmasiBatal = () => {
         setIsShow(false)
+    }
+
+    const handleKonfirmasiBayar = (e) => {
+        e.preventDefault()
+
+        // emailjs.send('gmail', 'template_fg7kwle', 'JJk7fWuFBmuUuR02t')
+        // .then((result) => {
+        //     console.log(result.text);
+        // }, (error) => {
+        //     console.log(error.text);
+        // });
+        setIsShow(false)
+        setIsKonfirmasi(true)
+    
     }
     return ( 
         <div className="" style={{ backgroundColor:'#EDF1D6' }}>
+            {console.log(isKonfirmasi)}
 
             <div className="container">   
                 <div className="row pt-5 pb-2">
@@ -165,12 +144,13 @@ const Home = () => {
                 </div>
 
                 <div className="">
-                    <KonfirmasiBayar show={isShow} handleBatal={handleBatal} dataUser={dataUser}/>
+                    <KonfirmasiBayar show={isShow} handleKonfirmasiBatal={handleKonfirmasiBatal} handleKonfirmasiBayar={handleKonfirmasiBayar} dataUser={dataUser}/>
                 </div>
 
                 <div className="fixed-bottom d-flex justify-content-center mb-5" >
                     {isAlert ? <AlertGagal isiAlert={isiAlert}/> : <></> }
                 </div>
+
 
                 <div className="row fixed-bottom">
                     <div className="vw-100 d-flex align-items-center justify-content-center" style={{ height:'60px', backgroundColor:'#40513B' }}>

@@ -1,8 +1,11 @@
 import { Modal } from "react-bootstrap";
+import emailjs from '@emailjs/browser';
+import { Link } from "react-router-dom";
 
 import './ButtonBayar.css';
 
-const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
+const KonfirmasiBayar = ({show, handleKonfirmasiBatal, handleKonfirmasiBayar, dataUser}) => {
+      
     return ( 
         <div className="container">
             <Modal
@@ -73,8 +76,13 @@ const KonfirmasiBayar = ({show, handleBatal, dataUser}) => {
                 </div>
 
                 <div className="modal-footer">
-                    <button className="tombol-batal" onClick={handleBatal}> Batal </button>
-                    <button className="tombol-bayar2"> Bayar </button>
+                    <button className="tombol-batal" onClick={handleKonfirmasiBatal}> Batal </button>
+
+                    <Link to='/bayarboss'>
+                    <div>
+                    <button className="tombol-bayar2" onClick={handleKonfirmasiBayar}> Bayar </button>
+                    </div>
+                    </Link>
                 </div>
             </Modal>
         </div>

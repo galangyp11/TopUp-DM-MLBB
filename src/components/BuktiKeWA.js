@@ -1,7 +1,7 @@
-const CheckoutWA = () => {
+const BuktiKeWA = () => {
     return ( 
         <div className="border"></div>
      );
 }
  
-export default CheckoutWA;
+export default BuktiKeWA;
