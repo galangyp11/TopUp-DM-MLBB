@@ -26,6 +26,8 @@ const HalamanBayar = ({setIsKonfirmasi, dataUser}) => {
         emailjs.send('service_ozotujk', 'template_fg7kwle', templateParams , 'JJk7fWuFBmuUuR02t')
           .then((result) => {
               console.log(result.text);
+              alert('Pembayaran berhasil')
+              setIsKonfirmasi(false)
           }, (error) => {
               console.log(error.text);
           });
