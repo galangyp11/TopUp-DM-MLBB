@@ -1,4 +1,4 @@
-import {useCallback, useEffect, useRef, useState} from "react";
+import {useEffect, useState} from "react";
 
 import IdServer from "./IdServer";
 import Diamonds from "./Diamonds";
@@ -7,7 +7,6 @@ import Notelp from "./Notelp";
 import CheckoutWA from "./BuktiKeWA";
 import KonfirmasiBayar from "./KonfirmasiBayar";
 import AlertGagal from "./AlertGagal";
-import HalamanBayar from "./HalamanBayar";
 
 import './ButtonBayar.css';
 
@@ -68,6 +67,8 @@ const Home = ({isKonfirmasi, setIsKonfirmasi, isShow, setIsShow, dataUser, setDa
 
     const handleBayar = () => {
         console.log(dataUser);
+
+        // setIsShow(true)
 
         if(dataUser.idUser === 'Null') {
             setIsAlert(true)

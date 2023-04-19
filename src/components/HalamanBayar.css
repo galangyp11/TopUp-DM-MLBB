@@ -13,6 +13,27 @@
     padding: 50px;
 }
 
+
+.tombol-bukti-bayar {
+    width: 200px;
+    height: 42px;
+    background-color: #000;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    
+    font-family: 'Sunflower';
+    font-style: normal;
+    color: white;
+    font-size: 20px;
+    line-height: 25px;
+}
+
+.tombol-bukti-bayar:hover{
+    background-color: white;
+    color: #000;
+}
+
 .tombol-kembali {
     width: 130px;
     height: 42px;

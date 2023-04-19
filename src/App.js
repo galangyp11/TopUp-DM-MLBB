@@ -12,11 +12,11 @@ function App() {
   const [dataUser, setDataUser] = useState({
     idUser: 'Null',
     serverUser: 'Null',
-    nickname: 'Null',
+    nickname: '',
     jumlahDiamond: 'Null',
     harga: ' ',
     pembayaran: 'Null',
-    noTelp: 'Null'
+    email: ''
   });
   const [isShow, setIsShow] = useState(false);
 
