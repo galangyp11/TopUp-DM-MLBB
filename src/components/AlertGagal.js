@@ -1,5 +1,6 @@
 import './AlertGagal.css';
 
+
 const AlertGagal = ({ isiAlert}) => {
 
     return ( 
