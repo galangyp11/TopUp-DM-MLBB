@@ -12,9 +12,9 @@ const Diamonds = ({ dataUser, setDataUser }) => {
   //   console.log({ dataUser });
 
   return (
-    <div className="card-content pr-4 pl-4 pb-4 pt-3" id="Diamonds">
+    <div className="card-content px-4 pb-4 pt-3" id="Diamonds">
       <div className="row">
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 border mt-n3">
           <input
             type="radio"
             id="5dm"
@@ -31,7 +31,7 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           </label>
         </div>
 
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="11dm"
@@ -47,10 +47,8 @@ const Diamonds = ({ dataUser, setDataUser }) => {
             11 Diamond
           </label>
         </div>
-      </div>
 
-      <div className="row">
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="27dm"
@@ -66,7 +64,7 @@ const Diamonds = ({ dataUser, setDataUser }) => {
             27 Diamond
           </label>
         </div>
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="50dm"
@@ -82,10 +80,8 @@ const Diamonds = ({ dataUser, setDataUser }) => {
             50 Diamond
           </label>
         </div>
-      </div>
 
-      <div className="row">
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="100dm"
@@ -102,7 +98,7 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           </label>
         </div>
 
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="137dm"
@@ -118,10 +114,8 @@ const Diamonds = ({ dataUser, setDataUser }) => {
             137 Diamond
           </label>
         </div>
-      </div>
 
-      <div className="row">
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="250dm"
@@ -138,7 +132,7 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           </label>
         </div>
 
-        <div className="col mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="1000dm"

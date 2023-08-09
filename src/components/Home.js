@@ -126,44 +126,46 @@ const Home = ({
             </div>
           )}
           {isDekstop && (
-            <div className="row border d-flex justify-content-center">
-              <div className="col-2 border d-flex justify-content-end py-2">
-                <img
-                  style={{ width: "10em", height: "10em" }}
-                  src={ml}
-                  alt="ml"
-                />
-              </div>
-              <div className="col-5 border py-2">
-                <div className="d-flex justify-content-center">
-                  <IdServerDekstop
-                    dataUser={dataUser}
-                    setDataUser={setDataUser}
+            <div className="col-12 col-sm-12 py-2">
+              <div className="row d-flex justify-content-center">
+                <div className="col-2 d-flex justify-content-end py-2">
+                  <img
+                    style={{ width: "10em", height: "10em" }}
+                    src={ml}
+                    alt="ml"
                   />
+                </div>
+                <div className="col-6 py-2">
+                  <div className="d-flex justify-content-center">
+                    <IdServerDekstop
+                      dataUser={dataUser}
+                      setDataUser={setDataUser}
+                    />
+                  </div>
                 </div>
               </div>
             </div>
           )}
 
-          <div className="col-2 col-sm-6 py-2">
+          <div className="col-12 col-sm-6 offset-sm-4 py-2">
             <div className="d-flex justify-content-center">
               <Diamonds dataUser={dataUser} setDataUser={setDataUser} />
             </div>
           </div>
 
-          <div className="col-12 col-sm-12 py-2">
+          <div className="col-12 col-sm-6 offset-sm-4 py-2">
             <div className="d-flex justify-content-center">
               <Pembayaran dataUser={dataUser} setDataUser={setDataUser} />
             </div>
           </div>
 
-          <div className="col-12 col-sm-12 py-2">
+          <div className="col-12 col-sm-6 offset-sm-4 py-2">
             <div className="d-flex justify-content-center">
               <Notelp dataUser={dataUser} setDataUser={setDataUser} />
             </div>
           </div>
 
-          <div className="col-12 col-sm-12 py-2 mb-5">
+          <div className="col-12 col-sm-6 py-2 mb-5">
             <div className="d-flex justify-content-center">
               <CheckoutWA dataUser={dataUser} setDataUser={setDataUser} />
             </div>
@@ -179,12 +181,16 @@ const Home = ({
           </div>
 
           <div className="fixed-bottom d-flex justify-content-center mb-5">
-            {isAlert ? <AlertGagal isiAlert={isiAlert} /> : <></>}
+            {isAlert ? (
+              <AlertGagal isiAlert={isiAlert} setIsAlert={setIsAlert} />
+            ) : (
+              <></>
+            )}
           </div>
 
-          <div className="col-12 col-sm-12 fixed-bottom">
+          <div className="col-12 col-sm-6 fixed-bottom">
             <div
-              className="vw-100 d-flex align-items-center justify-content-center"
+              className="vw-100 d-flex ml-n3 align-items-center justify-content-center"
               style={{ height: "60px", backgroundColor: "#40513B" }}
             >
               <button
