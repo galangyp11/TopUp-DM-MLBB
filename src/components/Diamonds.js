@@ -14,7 +14,7 @@ const Diamonds = ({ dataUser, setDataUser }) => {
   return (
     <div className="card-content px-4 pb-4 pt-3" id="Diamonds">
       <div className="row">
-        <div className="col-6 col-sm-4 border mt-n3">
+        <div className="col-6 col-sm-4 mt-n3">
           <input
             type="radio"
             id="5dm"

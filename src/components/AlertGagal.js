@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import "./AlertGagal.css";
+import "./Alert.css";
 
 const AlertGagal = ({ isiAlert, setIsAlert }) => {
   useEffect(() => {
@@ -9,9 +9,9 @@ const AlertGagal = ({ isiAlert, setIsAlert }) => {
   }, []);
 
   return (
-    <div className="border">
-      <div className="alert">
-        <p className="text-alert fw-light d-flex align-items-center justify-content-center m-n2">
+    <div className="mb-3">
+      <div className="alert-gagal">
+        <p className="text-alert d-flex align-items-center justify-content-center m-n2">
           {isiAlert}
         </p>
       </div>

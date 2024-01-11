@@ -1,0 +1,27 @@
+.alert-gagal {
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+  background-color: #ff5454;
+}
+
+.alert-berhasil {
+  border-radius: 5px;
+  width: 300px;
+  height: 30px;
+  background-color: #9ade7b;
+}
+
+.text-alert {
+  color: white;
+  height: 100%;
+  font-weight: 400;
+  font-size: medium;
+}
+
+.text-alert-berhasil {
+  color: black;
+  height: 100%;
+  font-weight: 400;
+  font-size: medium;
+}

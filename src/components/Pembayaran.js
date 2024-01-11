@@ -7,6 +7,7 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
       ...dataPembayaran,
       [e.target.name]: e.target.value,
     }));
+    console.log(e.target.id);
   };
 
   return (
@@ -20,23 +21,22 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
           onChange={handleChange}
           checked={dataUser.pembayaran === "Telkomsel"}
         />
-        <div className="col">
-          <label
-            className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
-            htmlFor="telkomsel"
+
+        <label
+          className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
+          htmlFor="telkomsel"
+        >
+          TELKOMSEL
+          <p
+            className="mx-n5 position-absolute top-50 start-100 translate-middle"
+            style={{ width: "120px" }}
           >
-            TELKOMSEL
-            <p
-              className="mx-n5 position-absolute top-50 start-100 translate-middle"
-              style={{ width: "120px" }}
-            >
-              {dataUser.harga}
-            </p>
-          </label>
-        </div>
+            {dataUser.harga}
+          </p>
+        </label>
       </div>
 
-      <div className="row mb-3 ">
+      <div className="row mb-3">
         <input
           type="radio"
           name="pembayaran"
@@ -45,20 +45,19 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
           onChange={handleChange}
           checked={dataUser.pembayaran === "BCA"}
         />
-        <div className="col ">
-          <label
-            className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
-            htmlFor="bca"
+
+        <label
+          className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
+          htmlFor="bca"
+        >
+          BCA
+          <p
+            className="mx-n5 position-absolute top-50 start-100 translate-middle"
+            style={{ width: "120px" }}
           >
-            BCA
-            <p
-              className="mx-n5 position-absolute top-50 start-100 translate-middle"
-              style={{ width: "120px" }}
-            >
-              {dataUser.harga}
-            </p>
-          </label>
-        </div>
+            {dataUser.harga}
+          </p>
+        </label>
       </div>
 
       <div className="row mb-3 ">
@@ -70,20 +69,19 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
           onChange={handleChange}
           checked={dataUser.pembayaran === "DANA"}
         />
-        <div className="col ">
-          <label
-            className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
-            htmlFor="dana"
+
+        <label
+          className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
+          htmlFor="dana"
+        >
+          DANA
+          <p
+            className="mx-n5 position-absolute top-50 start-100 translate-middle"
+            style={{ width: "120px" }}
           >
-            DANA
-            <p
-              className="mx-n5 position-absolute top-50 start-100 translate-middle"
-              style={{ width: "120px" }}
-            >
-              {dataUser.harga}
-            </p>
-          </label>
-        </div>
+            {dataUser.harga}
+          </p>
+        </label>
       </div>
     </div>
   );

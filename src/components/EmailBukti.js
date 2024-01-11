@@ -30,6 +30,7 @@ const Notelp = ({ dataUser, setDataUser }) => {
       <div className="row">
         <p className="fw-light pt-3" id="info">
           Bukti pembayaran atas pembelian anda akan kami kirimkan ke Email anda.
+          Pastikan email anda benar.
         </p>
       </div>
     </div>

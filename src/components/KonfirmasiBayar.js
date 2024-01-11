@@ -11,7 +11,10 @@ const KonfirmasiBayar = ({
 
   return (
     <div className="container">
-      <Modal className="d-flex align-items-center" show={show}>
+      <Modal
+        className="d-flex align-items-center justify-content-center"
+        show={show}
+      >
         <div className="modal-body">
           <h1>Konfirmasi</h1>
           <div className="row">

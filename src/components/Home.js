@@ -5,7 +5,7 @@ import IdServer from "./IdServer";
 import IdServerDekstop from "./IdServerDekstop";
 import Diamonds from "./Diamonds";
 import Pembayaran from "./Pembayaran";
-import Notelp from "./Notelp";
+import Notelp from "./EmailBukti";
 import CheckoutWA from "./BuktiKeWA";
 import KonfirmasiBayar from "./KonfirmasiBayar";
 import AlertGagal from "./AlertGagal";
@@ -79,23 +79,24 @@ const Home = ({
   const handleBayar = () => {
     console.log(dataUser);
 
-    // setIsShow(true)
-
     if (dataUser.idUser === "Null") {
       setIsAlert(true);
-      setIsiAlert("ID tidak ditemukan !");
+      setIsiAlert("ID tidak ditemukan!");
     } else if (dataUser.serverUser === "Null") {
       setIsAlert(true);
-      setIsiAlert("Server tidak ditemukan !");
+      setIsiAlert("Server tidak ditemukan!");
     } else if (dataUser.jumlahDiamond === "Null") {
       setIsAlert(true);
       setIsiAlert("Silahkan pilih jumlah Diamond");
     } else if (dataUser.pembayaran === "Null") {
       setIsAlert(true);
-      setIsiAlert("Silahkan pilih metode pembayaran !");
+      setIsiAlert("Silahkan pilih metode pembayaran!");
     } else if (dataUser.noTelp === "Null") {
       setIsAlert(true);
-      setIsiAlert("Silahkan isi nomor telepon !");
+      setIsiAlert("Silahkan isi nomor telepon!");
+    } else if (dataUser.email === "") {
+      setIsAlert(true);
+      setIsiAlert("Silahkan isi email!");
     } else {
       setIsAlert(false);
       setIsShow(true);
