@@ -36,10 +36,20 @@ const IdServer = ({ dataUser, setDataUser, isDark }) => {
 
       <div className="row mt-2">
         <div className="col">
-          <p className="my-1">ID</p>
+          <p
+            className="my-1"
+            style={isDark ? { color: "#eeeeee" } : { color: "#000000" }}
+          >
+            ID
+          </p>
         </div>
         <div className="col ">
-          <p className="my-1">Server</p>
+          <p
+            className="my-1"
+            style={isDark ? { color: "#eeeeee" } : { color: "#000000" }}
+          >
+            Server
+          </p>
         </div>
       </div>
 
