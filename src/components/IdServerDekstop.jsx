@@ -1,8 +1,9 @@
 import "./CardContent.css";
 import ml from "./img/ml.png";
 import i from "./img/i.png";
+import { IoIosInformationCircle } from "react-icons/io";
 
-const IdServer = ({ dataUser, setDataUser }) => {
+const IdServer = ({ dataUser, setDataUser, isDark }) => {
   const handleChange = (e) => {
     e.preventDefault();
     setDataUser((data) => ({
@@ -12,16 +13,32 @@ const IdServer = ({ dataUser, setDataUser }) => {
   };
 
   return (
-    <div className="card-content p-4" id="IdServer">
+    <div
+      className="card-content p-4"
+      id="IdServer"
+      style={
+        isDark ? { backgroundColor: "#222831" } : { backgroundColor: "#ffffff" }
+      }
+    >
       <div className="row">
         <div className="col ">
-          <p className="fs-3 ">Mobile Legends</p>
+          <p
+            className="fs-3 "
+            style={isDark ? { color: "#F6C90E" } : { color: "#000000" }}
+          >
+            Mobile Legends
+          </p>
         </div>
       </div>
 
       <div className="row">
         <div className="col-1 d-flex justify-content-end">
-          <p className="my-1">ID</p>
+          <p
+            className="my-1"
+            style={isDark ? { color: "#eeeeee" } : { color: "#000000" }}
+          >
+            ID
+          </p>
         </div>
         <div className="col-4">
           <input
@@ -33,7 +50,12 @@ const IdServer = ({ dataUser, setDataUser }) => {
           />
         </div>
         <div className="col-2 d-flex justify-content-end">
-          <p className="my-1">Server</p>
+          <p
+            className="my-1"
+            style={isDark ? { color: "#eeeeee" } : { color: "#000000" }}
+          >
+            Server
+          </p>
         </div>
         <div className="col-3">
           <input
@@ -45,18 +67,20 @@ const IdServer = ({ dataUser, setDataUser }) => {
           />
         </div>
         <div className="col-2 ">
-          <img
-            src={i}
-            alt="informasi klo gatau"
-            className="my-1"
-            style={{ width: "27px", cursor: "pointer" }}
+          <IoIosInformationCircle
+            size={33}
+            color={isDark ? "#F6C90E" : "#609966"}
           />
         </div>
       </div>
 
       <div className="row">
         <div className="col ">
-          <p className="fw-light pt-3" id="info">
+          <p
+            className="fw-light pt-3"
+            id="info"
+            style={isDark ? { color: "#eeeeee" } : { color: "#000000" }}
+          >
             Untuk mengetahui User ID Anda, silakan klik menu profile dibagian
             kiri atas pada menu utama game. User ID akan terlihat dibagian bawah
             Nama Karakter Game Anda. Silakan masukkan User ID Anda untuk

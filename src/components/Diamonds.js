@@ -1,6 +1,6 @@
 import "./CardContent.css";
 
-const Diamonds = ({ dataUser, setDataUser }) => {
+const Diamonds = ({ dataUser, setDataUser, isDark }) => {
   const handleChange = (e) => {
     e.preventDefault();
     setDataUser((dataDiamond) => ({
@@ -12,7 +12,13 @@ const Diamonds = ({ dataUser, setDataUser }) => {
   //   console.log({ dataUser });
 
   return (
-    <div className="card-content px-4 pb-4 pt-3" id="Diamonds">
+    <div
+      className="card-content px-4 pb-4 pt-3"
+      id="Diamonds"
+      style={
+        isDark ? { backgroundColor: "#222831" } : { backgroundColor: "#ffffff" }
+      }
+    >
       <div className="row">
         <div className="col-6 col-sm-4 mt-n3">
           <input
@@ -26,6 +32,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="5dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             5 Diamond
           </label>
@@ -43,6 +54,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="11dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             11 Diamond
           </label>
@@ -60,6 +76,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="27dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             27 Diamond
           </label>
@@ -76,6 +97,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="50dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             50 Diamond
           </label>
@@ -93,6 +119,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="100dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             100 Diamond
           </label>
@@ -110,6 +141,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="137dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             137 Diamond
           </label>
@@ -127,6 +163,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="250dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             250 Diamond
           </label>
@@ -144,6 +185,11 @@ const Diamonds = ({ dataUser, setDataUser }) => {
           <label
             className="card-diamond d-flex align-items-center justify-content-center"
             htmlFor="1000dm"
+            style={
+              isDark
+                ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                : { backgroundColor: "#9dc08b" }
+            }
           >
             1000 Diamond
           </label>

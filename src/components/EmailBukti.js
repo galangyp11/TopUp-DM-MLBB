@@ -1,6 +1,6 @@
 import "./CardContent.css";
 
-const Notelp = ({ dataUser, setDataUser }) => {
+const Notelp = ({ dataUser, setDataUser, isDark }) => {
   const handleChange = (e) => {
     e.preventDefault();
     setDataUser((data) => ({
@@ -10,9 +10,17 @@ const Notelp = ({ dataUser, setDataUser }) => {
   };
 
   return (
-    <div className="card-content p-4 " id="Email">
+    <div
+      className="card-content p-4 "
+      id="Email"
+      style={
+        isDark ? { backgroundColor: "#222831" } : { backgroundColor: "#ffffff" }
+      }
+    >
       <div className="row mt-n2">
-        <p>Email</p>
+        <p style={isDark ? { color: "#F6C90E" } : { color: "#000000" }}>
+          Email
+        </p>
       </div>
 
       <div className="row ">
@@ -28,7 +36,11 @@ const Notelp = ({ dataUser, setDataUser }) => {
       </div>
 
       <div className="row">
-        <p className="fw-light pt-3" id="info">
+        <p
+          className="fw-light pt-3"
+          id="info"
+          style={isDark ? { color: "#eeeeee" } : { color: "#000000" }}
+        >
           Bukti pembayaran atas pembelian anda akan kami kirimkan ke Email anda.
           Pastikan email anda benar.
         </p>

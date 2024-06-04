@@ -20,9 +20,6 @@ function App() {
   const [isShow, setIsShow] = useState(false);
 
   useEffect(() => {
-    // let id = dataUser.idUser
-    // const url = `https://pokeapi.co/api/v2/berry/${id}/`;
-
     let idServer = dataUser.idUser + dataUser.serverUser;
     const url = `https://v1.apigames.id/merchant/M230314DWWH5029OR/cek-username/mobilelegend?user_id=${idServer}&signature=000a7da84dfbdfc958f3392a6af11ea8`;
 
@@ -41,9 +38,6 @@ function App() {
     };
 
     fetchData();
-
-    // const timerAlert = setTimeout(() => { isAlert(true) }, 3000);
-    // return () => clearTimeout(timerAlert);
   }, [isShow]);
 
   return (

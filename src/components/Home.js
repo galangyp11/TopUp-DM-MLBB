@@ -11,6 +11,8 @@ import KonfirmasiBayar from "./KonfirmasiBayar";
 import AlertGagal from "./AlertGagal";
 import ml from "./img/ml.png";
 
+import { FaMoon, FaSun } from "react-icons/fa";
+
 import "./ButtonBayar.css";
 
 const Home = ({
@@ -23,6 +25,7 @@ const Home = ({
 }) => {
   const [isiAlert, setIsiAlert] = useState("");
   const [isAlert, setIsAlert] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   const [idServerLayar, setIdServerLayar] = useState();
   const isDekstop = useMediaQuery({ query: "(min-width: 576px)" });
   const isMobile = useMediaQuery({ query: "(max-width: 576px)" });
@@ -113,8 +116,17 @@ const Home = ({
     setIsKonfirmasi(true);
   };
 
+  const handleTheme = () => {
+    setIsDark(!isDark);
+  };
+
   return (
-    <div className="" style={{ backgroundColor: "#EDF1D6" }}>
+    <div
+      className=""
+      style={
+        isDark ? { backgroundColor: "#393E46" } : { backgroundColor: "#EDF1D6" }
+      }
+    >
       {console.log(isKonfirmasi)}
 
       <div className="container">
@@ -122,7 +134,11 @@ const Home = ({
           {isMobile && (
             <div className="col-12 col-sm-6 py-2">
               <div className="d-flex justify-content-center">
-                <IdServer dataUser={dataUser} setDataUser={setDataUser} />
+                <IdServer
+                  dataUser={dataUser}
+                  setDataUser={setDataUser}
+                  isDark={isDark}
+                />
               </div>
             </div>
           )}
@@ -141,37 +157,45 @@ const Home = ({
                     <IdServerDekstop
                       dataUser={dataUser}
                       setDataUser={setDataUser}
+                      isDark={isDark}
                     />
                   </div>
                 </div>
               </div>
             </div>
           )}
-
           <div className="col-12 col-sm-6 offset-sm-4 py-2">
             <div className="d-flex justify-content-center">
-              <Diamonds dataUser={dataUser} setDataUser={setDataUser} />
+              <Diamonds
+                dataUser={dataUser}
+                setDataUser={setDataUser}
+                isDark={isDark}
+              />
             </div>
           </div>
-
           <div className="col-12 col-sm-6 offset-sm-4 py-2">
             <div className="d-flex justify-content-center">
-              <Pembayaran dataUser={dataUser} setDataUser={setDataUser} />
+              <Pembayaran
+                dataUser={dataUser}
+                setDataUser={setDataUser}
+                isDark={isDark}
+              />
             </div>
           </div>
-
           <div className="col-12 col-sm-6 offset-sm-4 py-2">
             <div className="d-flex justify-content-center">
-              <Notelp dataUser={dataUser} setDataUser={setDataUser} />
+              <Notelp
+                dataUser={dataUser}
+                setDataUser={setDataUser}
+                isDark={isDark}
+              />
             </div>
           </div>
-
           <div className="col-12 col-sm-6 py-2 mb-5">
             <div className="d-flex justify-content-center">
               <CheckoutWA dataUser={dataUser} setDataUser={setDataUser} />
             </div>
           </div>
-
           <div className="">
             <KonfirmasiBayar
               show={isShow}
@@ -180,7 +204,6 @@ const Home = ({
               dataUser={dataUser}
             />
           </div>
-
           <div className="fixed-bottom d-flex justify-content-center mb-5">
             {isAlert ? (
               <AlertGagal isiAlert={isiAlert} setIsAlert={setIsAlert} />
@@ -190,12 +213,56 @@ const Home = ({
           </div>
 
           <div className="col-12 col-sm-6 fixed-bottom">
+            {isDark ? (
+              <div
+                className="theme rounded-circle mb-2 d-flex justify-content-center align-items-center"
+                style={{
+                  height: "4em",
+                  width: "4em",
+                  backgroundColor: "#222831",
+                  cursor: "pointer",
+                }}
+                onClick={handleTheme}
+              >
+                {/* <FaMoon size={"2em"} color="#EEEEEE" /> */}
+
+                <FaSun size={"2em"} color="#EEEEEE" />
+              </div>
+            ) : (
+              <div
+                className="theme rounded-circle mb-2 d-flex justify-content-center align-items-center"
+                style={{
+                  height: "4em",
+                  width: "4em",
+                  backgroundColor: "#222831",
+                  cursor: "pointer",
+                }}
+                onClick={handleTheme}
+              >
+                <FaMoon size={"2em"} color="#EEEEEE" />
+
+                {/* <FaSun size={"2em"} color="#EEEEEE" /> */}
+              </div>
+            )}
+
             <div
               className="vw-100 d-flex ml-n3 align-items-center justify-content-center"
-              style={{ height: "60px", backgroundColor: "#40513B" }}
+              style={
+                isDark
+                  ? {
+                      height: "60px",
+                      backgroundColor: "#222831", //${isDark ? backgroundColor: "#40513B" : backgroundColor: "#40513B"}
+                    }
+                  : { height: "60px", backgroundColor: "#40513B" }
+              }
             >
               <button
                 className="tombol-bayar d-flex align-items-center justify-content-center"
+                style={
+                  isDark
+                    ? { backgroundColor: "#393E46", color: "#F6C90E" }
+                    : { backgroundColor: "#609966" }
+                }
                 onClick={handleBayar}
               >
                 Bayar

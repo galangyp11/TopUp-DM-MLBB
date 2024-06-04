@@ -1,6 +1,6 @@
 import "./CardContent.css";
 
-const Pembayaran = ({ dataUser, setDataUser }) => {
+const Pembayaran = ({ dataUser, setDataUser, isDark }) => {
   const handleChange = (e) => {
     e.preventDefault();
     setDataUser((dataPembayaran) => ({
@@ -11,7 +11,13 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
   };
 
   return (
-    <div className="card-content p-4" id="Pembayaran">
+    <div
+      className="card-content p-4"
+      id="Pembayaran"
+      style={
+        isDark ? { backgroundColor: "#222831" } : { backgroundColor: "#ffffff" }
+      }
+    >
       <div className="row mb-3">
         <input
           type="radio"
@@ -25,11 +31,19 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
         <label
           className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
           htmlFor="telkomsel"
+          style={
+            isDark
+              ? { backgroundColor: "#393E46", color: "#F6C90E" }
+              : { backgroundColor: "#ffffff" }
+          }
         >
           TELKOMSEL
           <p
             className="mx-n5 position-absolute top-50 start-100 translate-middle"
-            style={{ width: "120px" }}
+            style={
+              ({ width: "120px" },
+              isDark ? { color: "#eeeeee" } : { color: "#000000" })
+            }
           >
             {dataUser.harga}
           </p>
@@ -49,11 +63,19 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
         <label
           className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
           htmlFor="bca"
+          style={
+            isDark
+              ? { backgroundColor: "#393E46", color: "#F6C90E" }
+              : { backgroundColor: "#ffffff" }
+          }
         >
           BCA
           <p
             className="mx-n5 position-absolute top-50 start-100 translate-middle"
-            style={{ width: "120px" }}
+            style={
+              ({ width: "120px" },
+              isDark ? { color: "#eeeeee" } : { color: "#000000" })
+            }
           >
             {dataUser.harga}
           </p>
@@ -73,11 +95,19 @@ const Pembayaran = ({ dataUser, setDataUser }) => {
         <label
           className="pl-3 text-start card-pmbayaran d-flex align-items-center justify-content-start position-relative"
           htmlFor="dana"
+          style={
+            isDark
+              ? { backgroundColor: "#393E46", color: "#F6C90E" }
+              : { backgroundColor: "#ffffff" }
+          }
         >
           DANA
           <p
             className="mx-n5 position-absolute top-50 start-100 translate-middle"
-            style={{ width: "120px" }}
+            style={
+              ({ width: "120px" },
+              isDark ? { color: "#eeeeee" } : { color: "#000000" })
+            }
           >
             {dataUser.harga}
           </p>
