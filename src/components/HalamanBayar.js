@@ -2,11 +2,14 @@ import "./HalamanBayar.css";
 import { useState } from "react";
 import AlertBerhasil from "./AlertBerhasil";
 import emailjs from "@emailjs/browser";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
+import { motion } from "framer-motion";
 
 const HalamanBayar = ({ setIsKonfirmasi, dataUser }) => {
   const tanggal = new Date();
   const [isiAlert, setIsiAlert] = useState("");
   const [isAlert, setIsAlert] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
   const templateParams = {
     idUser: dataUser.idUser,
@@ -25,6 +28,7 @@ const HalamanBayar = ({ setIsKonfirmasi, dataUser }) => {
 
   const handleBayar = (e) => {
     e.preventDefault();
+    setIsLoading(true);
 
     emailjs
       .send(
@@ -103,20 +107,42 @@ const HalamanBayar = ({ setIsKonfirmasi, dataUser }) => {
             />
           ) : (
             <div>
-              <div className="row mt-5">
-                <div className="d-flex justify-content-center align-items-center">
-                  <button className="tombol-bukti-bayar" onClick={handleBayar}>
-                    Pura-pura Bayar
-                  </button>
+              {isLoading ? (
+                <motion.div
+                  animate={{ rotate: [0, 360] }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1.5,
+                    ease: "linear",
+                  }}
+                  style={{ marginTop: "3em" }}
+                >
+                  <AiOutlineLoading3Quarters size={50} />
+                </motion.div>
+              ) : (
+                <div>
+                  <div className="row mt-5">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <button
+                        className="tombol-bukti-bayar"
+                        onClick={handleBayar}
+                      >
+                        Pura-pura Bayar
+                      </button>
+                    </div>
+                  </div>
+                  <div className="row mt-1">
+                    <div className="d-flex justify-content-center align-items-center">
+                      <button
+                        className="tombol-kembali"
+                        onClick={handleKembali}
+                      >
+                        Kembali
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div className="row mt-1">
-                <div className="d-flex justify-content-center align-items-center">
-                  <button className="tombol-kembali" onClick={handleKembali}>
-                    Kembali
-                  </button>
-                </div>
-              </div>
+              )}
             </div>
           )}
         </div>
